@@ -10,6 +10,7 @@ import { ClienteformComponent } from './components/clienteform/clienteform.compo
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ClienteService } from './service/cliente.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes:Routes = [
   {path:'', redirectTo:'home', pathMatch : 'full'},
@@ -25,7 +26,9 @@ const routes:Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes, {useHash:true}),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: APP_BASE_HREF, useValue:'/'},

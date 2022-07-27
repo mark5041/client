@@ -20,11 +20,11 @@ clienti!: Cliente[];
       complete: () => console.info('Operazione completata')
     })
   }
+  createCliente() {
+    let cliente = new Cliente();
+    this._clienteService.setter(cliente);
+    this._router.navigate(['/form']);
 
-  deleteCliente(cliente: Cliente) {
-    this._clienteService.deleteCliente(cliente.id).subscribe((dati : any) => {
-      this.clienti.splice(this.clienti.indexOf(cliente), 1);
-    });
   }
 
   updateCliente(cliente: Cliente) {
@@ -32,9 +32,11 @@ clienti!: Cliente[];
     this._router.navigate(['/form']);
   } 
 
-
-
-
+  deleteCliente(cliente: Cliente) {
+    this._clienteService.deleteCliente(cliente.id).subscribe((dati : any) => {
+      this.clienti.splice(this.clienti.indexOf(cliente), 1);
+    });
+  }
 
 
 
